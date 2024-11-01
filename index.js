@@ -10,12 +10,12 @@ app.use(bodyParser.json());
 
 // Configuração do transportador SMTP
 const transporter = nodemailer.createTransport({
-    host: 'smtp.emailexchangeonline.com', // Substitua pelo servidor SMTP correto
+    host: 'smtp.exemplo.com', // Substitua pelo servidor SMTP correto
     port: 587, // Ou 465 para SSL
     secure: false, // true para 465, false para outras portas
     auth: {
-        user: 'zabbix@grupoirani.com.br', // Seu e-mail
-        pass: 'zbbx#GI2024' // Sua senha
+        user: 'exemplo@dominio.com.br', // Seu e-mail
+        pass: 'senha' // Sua senha
     }
 });
 
@@ -276,8 +276,8 @@ app.post('/zabbix-webhook', (req, res) => {
 
     // Configurar os dados do e-mail
     const mailOptions = {
-        from: 'zabbix@grupoirani.com.br',
-        to: 'ti1@superirani.com.br', // O e-mail para onde enviar o alerta
+        from: 'exemplo@exemplo.com.br',
+        to: 'exemplo@exemplo.com.br', // O e-mail para onde enviar o alerta
         subject: `Alerta Zabbix: ${data.trigger}`,
         text: `Alerta acionado: ${data.trigger}. Detalhes: ${JSON.stringify(req.body)}`,
         html: html 
@@ -300,35 +300,6 @@ app.post('/zabbix-webhook', (req, res) => {
 
 
 });
-
-
-
-app.get('/zabbix', (req, res) => {
-
-    const params = req.body;
-// Configurar os dados do e-mail
-const mailOptions = {
-    from: 'zabbix@grupoirani.com.br',
-    to: 'ti1@superirani.com.br', // O e-mail para onde enviar o alerta
-    subject: `Alerta Zabbix: `,
-    text: `Alerta acionado: . Detalhes: `
-};
-
-// Enviar o e-mail
-transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-        console.error('Erro ao enviar e-mail:', error);
-        return res.status(500).send('Erro ao enviar e-mail' + error);
-    }
-    console.log('E-mail enviado:', info.response);
-    res.status(200).send('Alerta recebido e e-mail enviado');
-});
-
-
-});
-
-
-
 
 app.listen(PORT, () => {
     console.log(`Servidor escutando na porta ${PORT}`);
