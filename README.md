@@ -1,6 +1,6 @@
-# Zabbix HouseTI Webhook
+# Zabbix Email Webhook
 
-Este projeto é um serviço de webhook desenvolvido para facilitar o envio de alertas do Zabbix via email ou outras integrações personalizadas, utilizando o Nodemailer para configurar e gerenciar os alertas enviados. Projetado com foco em simplicidade e adaptabilidade, o **Zabbix HouseTI Webhook** é ideal para administradores de sistemas e equipes de TI que desejam integrar notificações de eventos críticos diretamente a seus fluxos de comunicação ou monitoramento.
+Este projeto é um serviço de webhook desenvolvido para facilitar o envio de alertas do Zabbix via email ou outras integrações personalizadas, utilizando o Nodemailer para configurar e gerenciar os alertas enviados. Projetado com foco em simplicidade e adaptabilidade, o **Zabbix Email Webhook** é ideal para administradores de sistemas e equipes de TI que desejam integrar notificações de eventos críticos diretamente a seus fluxos de comunicação ou monitoramento.
 
 ---
 
@@ -64,12 +64,12 @@ Este projeto é um serviço de webhook desenvolvido para facilitar o envio de al
 
 1. Clone o repositório para uma pasta de sua preferência:
     ```bash
-    git clone https://github.com/jeffersonalionco/zabbix-houseti-webhook.git
+    git clone https://github.com/jeffersonalionco/zabbix-email-webhook.git
     ```
 
 2. Acesse o diretório do projeto:
     ```bash
-    cd zabbix-houseti-webhook
+    cd zabbix-email-webhook
     ```
 
 3. Instale as dependências do projeto:
